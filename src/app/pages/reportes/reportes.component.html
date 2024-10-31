@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="background">
+
+    <div class="square">
+
+        <div id="tabla-reportes">
+            <div id="headertabla-reportes">
+                <div>{{headerR.numero}}</div>
+                <div>{{headerR.mes}}</div>
+                <div>{{headerR.usos}}</div>
+                <div>{{headerR.cobrado}}</div>
+            </div>
+            <div *ngFor="let fila of filasReportes; let i = index" class="fila">
+                <div>{{i + 1}}</div>
+                <div>{{fila.mes}}</div>
+                <div>{{fila.usos}}</div>
+                <div>{{fila.cobrado ? 'Sí' : 'No'}}</div>
+            </div>
+    </div> 
+            
+</div>
+   

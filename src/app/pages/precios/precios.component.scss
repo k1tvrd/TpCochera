@@ -1,0 +1,64 @@
+.background {
+	background-image:url('./../../../../public/image.png');
+	min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    &::after{ //para hacer overlay
+        content: '';
+        background-color: rgba(244, 242, 242, 0.3); 
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1; //z-index: para marcar jerarquia (superposicion) de los elementos
+        position: absolute;
+        pointer-events: none; //para q sea invisible para el mouse
+    }
+}
+
+.square {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(249, 244, 244, 0.80);
+    width: 500px;
+    z-index: 2;
+    position: relative;
+    border-radius: 20px;
+    top:20px; /* relative y top ajustan altura del square */
+}
+
+#tabla-precios {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8px 100px;
+    width: 600px;
+    #headertabla-precios{
+    width:450px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: rgba(89, 36, 36, 0.566);
+    border-radius: 2px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 1px;
+    margin-bottom: 5px; 
+}
+
+>div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid grey;
+    padding: 8px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-items: stretch;  
+}
+}

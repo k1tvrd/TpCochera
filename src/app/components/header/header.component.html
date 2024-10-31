@@ -1,0 +1,22 @@
+<!-- <a routerLink="/estado-cochera" routerLinkActive="activa"></a>
+<a routerLink="/login" routerLinkActive="activa"></a> -->
+
+<div class="background">
+    <h1>PARKING APP</h1>
+    <div class="headerElements">
+            <a [routerLink]="['/estado-cocheras']" class="header-boton">Estado Cochera</a>
+            @if(esAdmin){
+            <a [routerLink]="['/reportes']" class="header-boton">Reportes</a>
+            <a [routerLink]="['/precios']" class="header-boton">Precios</a>
+            <button (click)="logout()" class="header-boton">Log Out</button>
+        }
+    </div>
+</div>
+
+
+
+
+<!-- 
+router link activa color distonto para la pagina que estoy presente. hacer un .activa
+imporot header component en login y cochera ts
+en html <app-header></app-header> -->

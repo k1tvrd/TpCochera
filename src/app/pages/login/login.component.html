@@ -1,0 +1,23 @@
+<div class="background">
+    <div class="square">
+        <div class="form-container">
+            <form (ngSubmit)="login()">
+                <p class="is-title"> Ingrese sus credenciales:</p> 
+                <div>
+                    <div class="user-data">
+                        <label for="user" class="sr-only">Usuario:</label>
+                        <input type="text" id="user" name="user" [(ngModel)]="datosLogin.username" placeholder="Usuario"> 
+                    </div>
+                    <div class="passwor-data">
+                        <label for="password" class="sr-only">Contraseña:</label>
+                        <input type="password" id="password" name="password" [(ngModel)]="datosLogin.password" placeholder="Contraseña">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="boton-ingreso"> Iniciar Sesion </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+//ELEMENTOS VISUALES
+.background {
+	background-image:url('./../../../../public/image.png');
+	min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    backdrop-filter: blur(50px);
+    &::after{ //para hacer overlay
+        content: '';
+        background-color: rgba(244, 242, 242, 0.3); 
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1; //z-index: para marcar jerarquia (superposicion) de los elementos
+        position: absolute;
+        pointer-events: none; //para q sea invisible para el mouse
+    }
+}
+
+.is-title{
+    text-align: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.form-container{
+    width: 500px; 
+    background-color: rgba(249, 244, 244, 0.70); /* Transparente */
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;   
+    text-align: center;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 3;
+}
+
+.boton-ingreso{
+    border-radius: 3px;
+    border: unset;
+    padding: 15px 30px;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: rgb(104, 103, 103, 2);
+    color: white;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.boton-ingreso:hover{
+    border: solid white 2px;
+    text-decoration: underline;
+    font-weight: bold; 
+}
+
+input{
+border-radius: 3px;
+border: unset;
+padding: 15px 30px;
+z-index: 3;
+text-align: center;
+}
+
+.sr-only{
+position: absolute;
+left: -100000px;
+width: 1px;
+height: 1px;
+overflow: hidden;}
+
+.user-data{
+    margin-bottom: 10px;
+}
+
+.password-data{
+    margin-top: 10px;
+}
