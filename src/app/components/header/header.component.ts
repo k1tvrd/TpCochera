@@ -11,15 +11,14 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-esAdmin:boolean = true;
+  esAdmin: boolean = true;
 
-auth = inject(AuthService);
-router = inject(Router);
+  auth = inject(AuthService);
+  router = inject(Router);
 
-    logout() {// llama al auth service para hacer logout
-        this.auth.logout();
-        this.router.navigate(['/login']);  // redirige a la página de login
-    }
-
+  logout() {// llama al auth service para hacer logout
+    this.auth.logout();
+    this.router.navigate(['/login']);  // redirige a la página de login
+  }
 };
 

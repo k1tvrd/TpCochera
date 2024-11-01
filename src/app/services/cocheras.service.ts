@@ -9,25 +9,24 @@ export class CocherasService {
 
   auth = inject(AuthService)
 
-  getCocheras(){  
-    return fetch("http://localhost:4000/cocheras",{//fetch que trae cocheras, id cocheras
+  getCocheras() {
+    return fetch("http://localhost:4000/cocheras", {//fetch que trae cocheras, id cocheras
       method: "GET",
       headers: {
-        Authorization: "Bearer " + (this.auth.getToken()?? "")
-  },
-   }).then(r => r.json());
+        Authorization: "Bearer " + (this.auth.getToken() ?? "")
+      },
+    }).then(r => r.json());
   }
 
-  getCocherasId(idCochera: number){  
-    return fetch(`http://localhost:4000/cocheras/${idCochera}`,{//fetch que trae cocheras, id cocheras
+  getCocherasId(idCochera: number) {
+    return fetch(`http://localhost:4000/cocheras/${idCochera}`, {//fetch que trae cocheras, id cocheras.
       method: "GET",
       headers: {
-        Authorization: "Bearer " + (this.auth.getToken()?? "")
-  },
-   }).then(r => r.json());
+        Authorization: "Bearer " + (this.auth.getToken() ?? "")
+      },
+    }).then(r => r.json());
   }
-
-
+  
   eliminarCochera(idCochera: number): Promise<Response> {
     return fetch(`http://localhost:4000/cocheras/${idCochera}`, {
       method: 'DELETE',
@@ -53,8 +52,8 @@ export class CocherasService {
       return res.json();
     });
   }
-  
-  habilitarCochera(cochera: Cochera){
+
+  habilitarCochera(cochera: Cochera) {
     return fetch(`http://localhost:4000/cocheras/${cochera.id}/enable`, {
       method: 'POST',
       headers: {
@@ -63,8 +62,8 @@ export class CocherasService {
       }
     });
   }
-  
-  deshabilitarCochera(cochera: Cochera){
+
+  deshabilitarCochera(cochera: Cochera) {
     return fetch(`http://localhost:4000/cocheras/${cochera.id}/disable`, {
       method: 'POST',
       headers: {
@@ -74,8 +73,7 @@ export class CocherasService {
     });
   }
 
-
 }
-  
-  
+
+
 

@@ -1,4 +1,4 @@
-.background{
+.background {
     background-color: rgb(77, 77, 77);
     background-size: cover;
     padding: 1px;
@@ -8,7 +8,7 @@
     flex-direction: row;
 }
 
-h1{
+h1 {
     color: white;
     font-size: xx-large;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -18,23 +18,22 @@ h1{
     margin-bottom: 5px;
 }
 
-.headerElements{
+.headerElements {
     display: flex;
     flex-direction: row;
     align-items: center;
     position: absolute;
     gap: 15px;
     right: 0px;
-    padding: 20px 30px;  
+    padding: 20px 30px;
 }
 
-.header-boton{
+.header-boton {
     color: white;
     text-decoration: none;
     font-size: large;
-
 }
 
-.header-boton:hover{
+.header-boton:hover {
     text-decoration: underline;
 }

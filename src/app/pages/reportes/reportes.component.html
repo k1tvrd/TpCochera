@@ -10,13 +10,15 @@
                 <div>{{headerR.usos}}</div>
                 <div>{{headerR.cobrado}}</div>
             </div>
-            <div *ngFor="let fila of filasReportes; let i = index" class="fila">
-                <div>{{i + 1}}</div>
-                <div>{{fila.mes}}</div>
-                <div>{{fila.usos}}</div>
-                <div>{{fila.cobrado ? 'Sí' : 'No'}}</div>
+
+            @for (reporte of reportes; track $index){
+            <div class="fila">
+                <div>{{$index+1}}</div>
+                <div>{{reporte.mes}}</div>
+                <div>{{reporte.usos}}</div>
+                <div>{{reporte.cobrados}}</div>
             </div>
-    </div> 
-            
+            }
+        </div>
+    </div>
 </div>
-   

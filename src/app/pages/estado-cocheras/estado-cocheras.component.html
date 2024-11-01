@@ -6,35 +6,36 @@
         <div class="square">
             <div id="tabla">
                 <div id="headertabla">
-                    <div>Nro</div>
+                    <div>N°</div>
                     <div>Disponibilidad</div>
                     <div>Ingreso</div>
                     <div>Acciones</div>
                 </div>
 
                 @for (fila of filas; track $index) {
+                <div>
+                    <div>{{$index+1}}</div>
+
                     <div>
-                        <div>{{ $index + 1 }}</div>
-                        
-                        <div>
-                            @if (fila.activo) {
-                                <p class="patente">{{ fila.activo.patente }}</p>
-                            } @else if (fila.deshabilitada) {
-                                <div><span class="ocupado">No disponible</span></div>
-                            } @else {
-                                <div  (click)="abrirModalEstacionamiento(fila.id)"><span class="disponible">Disponible</span></div>
-                            }
+                        @if (fila.activo) {
+                        <p class="patente" (click)="cerrarModalEstacionamiento(fila.id, fila.activo.patente)">{{
+                            fila.activo.patente }}</p>
+                        } @else if (fila.deshabilitada) {
+                        <div (click)="ModalNoDisponible()"><span class="ocupado">No disponible</span></div>
+                        } @else {
+                        <div (click)="abrirModalEstacionamiento(fila.id)"><span class="disponible">Disponible</span>
                         </div>
-
-                        <div>{{ fila.activo?.horaIngreso }}</div>
-
-                        <div class="acciones-container">
-                            <i [ngClass]="fila.deshabilitada ? 'bx bx-block' : 'bx bx-calendar-check'" 
-                               (click)="cambiarDisponibilidadCochera($index); $event.stopPropagation()"></i>
-                            <i class="bx bx-trash" 
-                               (click)="eliminarFila(fila.id); $event.stopPropagation()"></i>
-                        </div>
+                        }
                     </div>
+
+                    <div>{{ fila.activo?.horaIngreso }}</div>
+
+                    <div class="acciones-container">
+                        <i [ngClass]="fila.deshabilitada ? 'bx bx-block' : 'bx bx-calendar-check'"
+                            (click)="cambiarDisponibilidadCochera($index); $event.stopPropagation()"></i>
+                        <i class="bx bx-trash" (click)="eliminarFila(fila.id); $event.stopPropagation()"></i>
+                    </div>
+                </div>
                 }
             </div>
         </div>

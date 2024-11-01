@@ -1,22 +1,23 @@
 .background {
-	background-image:url('./../../../../public/image.png');
-	min-height: 100vh;
+    background-image: url('./../../../../public/image.png');
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    &::after{ //para hacer overlay
+    justify-content: center;
+    align-items: center;
+
+    &::after {
         content: '';
-        background-color: rgba(244, 242, 242, 0.3); 
+        background-color: rgba(244, 242, 242, 0.3);
         left: 0;
         right: 0;
         height: 100%;
-        z-index: 1; //z-index: para marcar jerarquia (superposicion) de los elementos
+        z-index: 1; 
         position: absolute;
-        pointer-events: none; //para q sea invisible para el mouse
+        pointer-events: none; 
     }
 }
 
@@ -29,7 +30,7 @@
     z-index: 2;
     position: relative;
     border-radius: 20px;
-    top:20px; /* relative y top ajustan altura del square */
+    top: 20px;
 }
 
 #tabla-reportes {
@@ -38,36 +39,36 @@
     text-align: center;
     padding: 8px 100px;
     width: 600px;
-    #headertabla-reportes{
-    width:450px;
-    font-size: x-large;
-    font-weight: bold;
-    background-color: rgba(89, 36, 36, 0.566);
-    border-radius: 2px;
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 1px;
-    margin-bottom: 5px; 
-}
 
->div{
-    display: grid;
-    grid-template-columns: 50px 1fr 1fr 1fr;
-    border-bottom: 1px solid grey;
-    padding: 8px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    align-items: center;
-    justify-items: stretch;  
-}
+    #headertabla-reportes {
+        width: 450px;
+        font-size: x-large;
+        font-weight: bold;
+        background-color: rgba(89, 36, 36, 0.566);
+        border-radius: 2px;
+        color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 1px;
+        margin-bottom: 5px;
+    }
+
+    >div {
+        display: grid;
+        grid-template-columns: 50px 1fr 1fr 1fr;
+        border-bottom: 1px solid grey;
+        padding: 8px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        align-items: center;
+        justify-items: stretch;
+
+    }
 }
 
 .fila {
     display: grid;
-    grid-template-columns: 50px 1fr 1fr 1fr; 
-    padding: 5px; 
-    border-bottom: 1px solid #ccc; /* linea divide filas */
-    align-items: center; 
+    grid-template-columns: 50px 1fr 1fr 1fr;
+    padding: 5px;
+    border-bottom: 1px solid #ccc; // linea divide filas
+    align-items: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-

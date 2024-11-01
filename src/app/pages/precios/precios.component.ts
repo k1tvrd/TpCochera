@@ -15,12 +15,12 @@ export class PreciosComponent {
     tiempo: "Tiempo",
     costo: "Costo",
     acciones: "Acciones",
-    
-};
 
-filasPrecios = [
+  };
+
+  filasPrecios = [
     { tiempo: "Media Hora", costo: 250, acciones: false },
     { tiempo: "Una Hora", costo: 400, acciones: false },
-];
+  ];
 
 }
